@@ -1,0 +1,11 @@
+### IDE ###
+.vscode/
+.idea/
+
+### Project-Manager ###
+node_modules/
+
+### out ###
+out/
+gen/
+dist/

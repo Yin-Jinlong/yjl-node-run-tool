@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "composite": false,
+    "declaration": true,
+    "declarationMap": false,
+    "incremental": false,
+    "module": "ESNext",
+    "sourceMap": false,
+    "target": "ESNext"
+  },
+  "include": [
+    "src/*.ts",
+    "src/**/*.ts"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "@yinjinlog/run-tool",
+  "version": "1.0.0",
+  "description": "run 工具",
+  "author": "Yin-Jinlong",
+  "type": "module",
+  "scripts": {},
+  "license": "LGPL-3.0-or-later",
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "rollup": "^4.15.0",
+    "tsx": "^4.7.2",
+    "typescript": "^5.4.5"
+  }
+}
