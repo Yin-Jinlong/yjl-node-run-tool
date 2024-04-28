@@ -6,6 +6,15 @@ import typescript from 'rollup-plugin-typescript2'
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 
+const version = (() => {
+    let v = (process.env.VERSION_REF ?? '').trim()
+    if (!v)
+        return '0.0.0-dev'
+    if (!v.startsWith('refs/tags/v'))
+        throw new Error('no version ref')
+    return v.substring(11)
+})()
+
 async function buildBin() {
     const build = await rollup({
         input: `index.ts`,
@@ -45,7 +54,7 @@ async function run() {
 
     const packageJson = JSON.parse((readFileSync('package.json')).toString())
     packageJson.name = '@yin-jinlong/run'
-    packageJson.version = readFileSync('VERSION').toString().trim()
+    packageJson.version = version
     packageJson.bin = {}
 
     packageJson.bin['run'] = `./index.mjs`

@@ -4,8 +4,7 @@
   "type": "module",
   "types": "./index.d.ts",
   "scripts": {
-    "build": "tsx build.ts",
-    "release": "cd ../../dist && npm publish --access public"
+    "build": "tsx build.ts"
   },
   "license": "LGPL-3.0-or-later",
   "devDependencies": {
