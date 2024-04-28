@@ -8,13 +8,13 @@ import {convertTime} from './utils'
 
 const st = performance.now()
 
-program.version('0.1.0', '-v, --version')
+program.version('0.1.2', '-v, --version')
     .name('run')
     .usage('[options] <script...>')
-    .option('-r, --run', 'run shell')
+    .option('-e, --exec', 'pnpm exec')
     .argument('<script...>', 'script name or shell')
     .action((scripts, flags: CmdArgs, cmd) => {
-        if (flags.run)
+        if (flags.exec)
             runShells(scripts)
         else
             runPkgScripts(scripts)
@@ -28,7 +28,7 @@ function runShells(shells: string[]) {
         for (const shell of shells) {
             try {
                 console.log('running ', shell, '\n')
-                execSync(shell, {stdio: 'inherit'})
+                execSync(`pnpm exec ${shell}`, {stdio: 'inherit'})
                 successCount++
             } finally {
                 console.log('took ', convertTime(performance.now() - st))
