@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsx build.ts"
   },
-  "license": "LGPL-3.0-or-later",
+  "license": "GPL-3.0",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
