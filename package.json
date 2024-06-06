@@ -7,7 +7,7 @@
   "scripts": {
     "build": "pnpm -C packages/core build"
   },
-  "license": "LGPL-3.0-or-later",
+  "license": "GPL-3.0",
   "devDependencies": {
     "@types/node": "^20.12.7",
     "rollup": "^4.15.0",
